@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A&M Content Engine — Checkout</title>
+  <!-- Paddle.js v2 -->
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --button-bg: #2563eb;
+      --button-hover: #1d4ed8;
+      --border: #334155;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      max-width: 440px;
+      width: 100%;
+      padding: 36px 32px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .description {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    .price-box {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .price {
+      font-size: 40px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .period {
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+
+    .features {
+      list-style: none;
+      margin-bottom: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .features li {
+      font-size: 14px;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .features svg {
+      width: 18px;
+      height: 18px;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .btn {
+      width: 100%;
+      background-color: var(--button-bg);
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.15s ease-in-out;
+    }
+
+    .btn:hover {
+      background-color: var(--button-hover);
+    }
+
+    .btn:disabled {
+      background-color: var(--border);
+      cursor: not-allowed;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <span class="badge">Founding Tier</span>
+    <h1>A&M Content Engine</h1>
+    <p class="description">Automated multi-platform asset distribution from your long-form podcast or video sessions.</p>
+
+    <div class="price-box">
+      <span class="price">$49</span>
+      <span class="period">/ month</span>
+    </div>
+
+    <ul class="features">
+      <li>
+        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        4 long-form episodes processed per month
+      </li>
+      <li>
+        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        20 multi-platform assets (LinkedIn, X, Newsletter, Scripts)
+      </li>
+      <li>
+        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        Under 2-hour automated fulfillment to your inbox
+      </li>
+      <li>
+        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        Locked-in early subscriber pricing
+      </li>
+    </ul>
+
+    <button id="checkout-button" class="btn">Subscribe to Founding Tier</button>
+    <p class="footer-note">Secure subscription powered by Paddle</p>
+  </div>
+
+  <script>
+    // 1. Configure Sandbox Environment
+    Paddle.Environment.set('sandbox');
+
+    // 2. Initialize with your Sandbox Client-Side Token
+    Paddle.Initialize({
+      token: 'test_abf8b71dcd3c8848c059967a440',
+      eventCallback: function(data) {
+        if (data.name === 'checkout.completed') {
+          console.log('Checkout completed successfully:', data);
+        }
+      }
+    });
+
+    // 3. Attach Click Event to open overlay checkout
+    document.getElementById('checkout-button').addEventListener('click', function () {
+      Paddle.Checkout.open({
+        items: [
+          {
+            priceId: 'pri_01m483rhj7bzy5g2rxqn3vj5zm',
+            quantity: 1
+          }
+        ],
+        settings: {
+          displayMode: 'overlay',
+          theme: 'light',
+          locale: 'en'
+        }
+      });
+    });
+  </script>
+</body>
+</html>
